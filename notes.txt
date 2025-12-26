@@ -1,0 +1,8 @@
+
+Install meld
+sudo apt install meld
+
+
+Configure git diff tool as meld
+git config --global diff.tool meld
+
