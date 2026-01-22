@@ -17,3 +17,23 @@ To view/edit the notes.html
 > Import the notes.html 
 > Modify it 
 > Export it > copy(has option to copy as html) > paste and replace notes.html contents
+
+
+Adding, JSON for Modern C++ (nlohmann/json)
+================================================
+* https://github.com/nlohmann/json.git
+* Add it as subtree to your project
+** git subtree add --prefix third-party/json https://github.com/nlohmann/json.git master --squash
+** When you run git subtree add, Git automatically creates a merge commit. 
+** Because the changes are already "committed" to your local history, they will not show up in the "Changes" or "Staged Changes" list.
+** How to verify: Look at your Git Graph or run git log in the terminal. You should see a new commit titled "Add '' from commit ''".    
+* These libraries consist only of .hpp files. You don't "build" them; you just point to their location.
+* How to use (CMakeLists.txt):
+* cmake file
+    # Header-only libraries usually provide an 'interface' target
+    add_subdirectory(external/json)
+    target_link_libraries(my_app PRIVATE nlohmann_json::nlohmann_json)
+* C++ Code (in cpp file):
+    #include <nlohmann/json.hpp>
+    using json = nlohmann::json;
+    // No linking required, just include and go!
