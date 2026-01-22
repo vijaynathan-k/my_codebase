@@ -1,8 +1,19 @@
 
 Install meld
-sudo apt install meld
+ubuntu: sudo apt install meld
 
 
 Configure git diff tool as meld
-git config --global diff.tool meld
+ubuntu : git config --global diff.tool meld
 
+Install the build-essential package: This command installs make and other essential tools for compiling software from source:
+> sudo apt install build-essential
+> xcode-select --install
+
+To view/edit the notes.html
+============================
+> got to https://stackedit.io/
+> Log in with google account i.e. vijaynathan.k
+> Import the notes.html 
+> Modify it 
+> Export it > copy(has option to copy as html) > paste and replace notes.html contents

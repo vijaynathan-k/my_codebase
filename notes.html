@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>notes.html</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>notes</p>
+<h1 id="cmake--hello-world">CMake : Hello world</h1>
+<h2 id="basic-project-structure">Basic Project Structure</h2>
+<p>Create a folder for your project. A standard minimal setup looks like this:</p>
+<p>Plaintext</p>
+<blockquote>
+<p>my_project/<br>
+├── CMakeLists.txt # The “instructions” file<br>
+└── main.cpp # Your source code</p>
+</blockquote>
+<p><strong>The CMakeLists.txt file</strong><br>
+This file tells CMake what to build. Copy this into yours:</p>
+<blockquote>
+<p>CMake<br>
+cmake_minimum_required(VERSION 3.10)<br>
+project(HelloWorld)<br>
+#Create an executable named ‘my_app’ from ‘main.cpp’<br>
+add_executable(my_app main.cpp)</p>
+</blockquote>
+<h2 id="the-build-workflow-out-of-source">The Build Workflow (Out-of-Source)</h2>
+<p>The best practice is to build in a separate folder so you don’t clutter your source code with temporary files.</p>
+<p>Open your terminal in the my_project folder.</p>
+<p>Create a build directory:</p>
+<blockquote>
+<p>Bash</p>
+<blockquote>
+<p>mkdir build &amp;&amp; cd build</p>
+</blockquote>
+</blockquote>
+<p>Configure the project:</p>
+<blockquote>
+<p>Bash</p>
+<blockquote>
+<p>cmake …<br>
+(This checks for your compiler and creates a Makefile or Visual Studio project.)</p>
+</blockquote>
+</blockquote>
+<p>Build the project:</p>
+<blockquote>
+<p>Bash</p>
+<blockquote>
+<p>cmake --build .</p>
+</blockquote>
+</blockquote>
+<p>Run it:</p>
+<blockquote>
+<p>Linux/Mac: ./my_app<br>
+Windows: .\Debug\my_app.exe</p>
+</blockquote>
+<h2 id="ide-integration-easier-way">IDE Integration (Easier Way)</h2>
+<p>If you don’t want to use the command line, modern IDEs handle this automatically:</p>
+<p>VS Code: Install the “CMake Tools” extension. It will detect your CMakeLists.txt and provide “Build” and “Run” buttons at the bottom.</p>
+</div>
+</body>
+
+</html>
