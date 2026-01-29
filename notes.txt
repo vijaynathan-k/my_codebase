@@ -18,6 +18,23 @@ To view/edit the notes.html
 > Modify it 
 > Export it > copy(has option to copy as html) > paste and replace notes.html contents
 
+cmake_usage
+==============
+vkumar@markem-imaje.com@DCYD9Q24:/workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib$ ls
+build  CMakeLists.txt  main.cpp
+vkumar@markem-imaje.com@DCYD9Q24:/workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib$ cd build/
+vkumar@markem-imaje.com@DCYD9Q24:/workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib/build$ cmake ..
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib/build
+vkumar@markem-imaje.com@DCYD9Q24:/workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib/build$ cmake --build .
+[ 50%] Building CXX object CMakeFiles/using_nlohmann_json_app.dir/main.cpp.o
+[100%] Linking CXX executable using_nlohmann_json_app
+[100%] Built target using_nlohmann_json_app
+vkumar@markem-imaje.com@DCYD9Q24:/workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib/build$ ls
+CMakeCache.txt  CMakeFiles  cmake_install.cmake  Makefile  using_nlohmann_json  using_nlohmann_json_app
+vkumar@markem-imaje.com@DCYD9Q24:/workdir/study/my_codebase/projects/using_nlohmann_json_third_party_lib/build$ ./using_nlohmann_json
+Hello from using_nlohmann_json_third_party_lib 
 
 Adding, JSON for Modern C++ (nlohmann/json)
 ================================================
