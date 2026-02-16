@@ -3,8 +3,8 @@ project(PythonCppInterop)
 
 # 1. Set the path to your local pybind11 directory
 # Replace "../external/pybind11" with your actual path
-set(PYBIND11_LIB_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/../../third-party/pybind11")
-set(PYBIND11_LIB_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../third-party/pybind11/include")
+set(PYBIND11_LIB_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/../../../third-party/pybind11")
+set(PYBIND11_LIB_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../third-party/pybind11/include")
 
 # 2. Add the directory to the build
 # This makes the 'pybind11_add_module' command available

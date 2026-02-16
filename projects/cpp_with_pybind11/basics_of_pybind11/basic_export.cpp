@@ -1,4 +1,5 @@
 #include <pybind11/pybind11.h>
+namespace py = pybind11;
 
 // 1. Define the actual C++ logic
 int add(int i, int j) {
@@ -17,5 +18,5 @@ PYBIND11_MODULE(fast_math, m) {
     
     // Expose the 'add' function to Python
     m.def("add", &add, "A function that adds two integers");
-    m.def("substract", &substract, "A function to subtract two numbers");
+    m.def("substract", &substract, "A function to subtract two numbers", py::arg("i"), py::arg("j"));
 }
