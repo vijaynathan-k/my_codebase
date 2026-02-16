@@ -5,6 +5,11 @@ int add(int i, int j) {
     return i + j;
 }
 
+int substract(int i, int j)
+{
+    return i - j;
+}
+
 // 2. Create the Python module
 // "fast_math" is the name you will use in Python: 'import fast_math'
 PYBIND11_MODULE(fast_math, m) {
@@ -12,4 +17,5 @@ PYBIND11_MODULE(fast_math, m) {
     
     // Expose the 'add' function to Python
     m.def("add", &add, "A function that adds two integers");
+    m.def("substract", &substract, "A function to subtract two numbers");
 }

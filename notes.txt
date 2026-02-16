@@ -54,3 +54,9 @@ Adding, JSON for Modern C++ (nlohmann/json)
     #include <nlohmann/json.hpp>
     using json = nlohmann::json;
     // No linking required, just include and go!
+
+
+Adding, pybind11 
+============================
+
+* git subtree add --prefix third-party/pybind11 https://github.com/pybind/pybind11.git master --squash
