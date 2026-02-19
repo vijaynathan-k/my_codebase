@@ -27,5 +27,6 @@ and wraps the corresponding constructor
 PYBIND11_MODULE(class_and_struct, m){
     py::class_<Pet>(m, "Pet")
         .def(py::init<const std::string &>())
-        .def_readwrite("name",&Pet::name);
+        .def_readwrite("name",&Pet::name)
+        .def_readonly("m_initial_name", &Pet::m_initial_name);
 }
