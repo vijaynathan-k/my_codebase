@@ -4,6 +4,7 @@
 
 namespace py = pybind11;
 
+// Non-plymorphic;no virtual function
 struct Pet {
     Pet(const std::string &name) 
         : name(name) 
@@ -14,6 +15,15 @@ struct Pet {
 
 struct Dog : Pet {
     Dog(const std::string &name) : Pet(name) { }
+    std::string bark() const { return "woof!"; }
+};
+
+// Polymorphic
+struct PolymorphicPet {
+    virtual ~PolymorphicPet() = default;
+};
+
+struct PolymorphicDog : PolymorphicPet {
     std::string bark() const { return "woof!"; }
 };
 
@@ -32,6 +42,14 @@ PYBIND11_MODULE(inheritance_and_auto_downcasting, m){
         .def(py::init<const std::string &>())
         .def("bark", &Dog::bark);
 
+    py::class_<PolymorphicPet>(m, "PolymorphicPet");
+
+    py::class_<PolymorphicDog, PolymorphicPet>(m, "PolymorphicDog")
+        .def(py::init())
+        .def("bark", &PolymorphicDog::bark);
+
+
     m.def("PetStore", [](){return std::unique_ptr<Pet>(new Dog("Woolfy"));});
+    m.def("polymorphic_PetStore", [](){return std::unique_ptr<PolymorphicPet>(new PolymorphicDog());});
 }
 
